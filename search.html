@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Required for media query to work on mobile. Set width of viewport to the device width with scale 1x -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delicious</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Delicious</h1>
+    <h2 id="subtitle">Find your next favourite food spot!</h2>
+  </header>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="#">Log In</a></li>
+      <li><a href="registration.html">Sign up</a></li>
+      <li><a href="search.html">Search</a></li>
+      <li><a href="submission.html">Submission</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <h2>Search for resturants!</h2>
+
+    <!--
+    This form is for searching restaurants by name(text), city(text) or filter by rating(dropdown).
+
+    The Search button is currently a link to the results_sample.html instead of an actual input submit button for the form.
+     -->
+    <form action="#" method="post" id="search">
+    <fieldset>
+      <legend>Search for Resturant Reviews</legend>
+      <label for="name">Restaurant Name:</label>
+      <input id="name" type="text" name="name">
+      <br>
+      <label for="location">City:</label>
+      <input id="location" type="text" name="location">
+      <br>
+
+      <label for="filterByRating">Filter by this rating or higher:</label>
+      <input id="filterByRating" type="checkbox">
+
+      <label for="rating">Rating:</label>
+      <select name="rating" form="search" id="rating">
+        <option value="rating1" selected>1</option>
+        <option value="rating2">2</option>
+        <option value="rating3">3</option>
+        <option value="rating4">4</option>
+        <option value="rating5">5</option>
+      </select>
+      <br>
+
+      <!-- When we add the actual functionality for search. We should us input type="submit" to submit the actual form values.-->
+      <!--
+      <input type="submit" value="Search" class="btn btn-1">
+       -->
+
+      <!-- Hack to demostrate what a sample results look like right now -->
+      <a href="./results_sample.html" class="btn btn-1">Search</a>
+
+    </fieldset>
+    </form>
+  </div>
+
+  <footer>
+  Copyright CS 4WW3 Project. McMaster University
+  </footer>
+
+</body>
+</html>

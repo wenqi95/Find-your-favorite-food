@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Required for media query to work on mobile. Set width of viewport to the device width with scale 1x -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delicious</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Delicious</h1>
+    <h2 id="subtitle">Find your next favourite food spot!</h2>
+  </header>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="#">Log In</a></li>
+      <li><a href="registration.html">Sign up</a></li>
+      <li><a href="search.html">Search</a></li>
+      <li><a href="submission.html">Submission</a></li>
+    </ul>
+  </nav>
+
+  <!--
+  A search results page is a two column layout. It becomes one column if on mobile.
+  Column left:
+    1. List of Restaurant. Each listing has:
+      + Restaurant picture
+      + Name, Average Ratings, Cuisine
+      + Address, Phone number
+      + A preview user review
+    2. "View more results" button
+  Column right:
+    1. Map with markers being all restaurant listings shown.
+  -->
+  <div class="content">
+    <h2>Restaurants in Hamilton, ON, Canada</h2>
+
+    <div class="col-right">
+      <picture>
+        <source sizes="100vw"
+        srcset="img/map301.png 301w,
+                img/map602.png 602w">
+        <img src="img/map301.png" alt="map of restaurants">
+      </picture>
+    </div>
+
+    <div class="col-left">
+      <!--
+      Sample search results page is implemented in a table
+      because the project specifications said to do so.
+
+      However because each restaurant listing, contains an image, restaurant info and a preview review,
+      It requires extra work to fit this infomation correctly aka colspan, rowspan.
+      Otherwise, the restaurant image would be too big and the text would be on new rows and not use up the row.
+
+      However I think it would have been more clear to read if it was done with divs.
+      Though each restaurant listing is a unit of information and tabular in a sense.
+      Alternatively with divs, we could define everything as relative floating elements.
+      See: individual_sample.html for how that might look where the elements are just floated in the div.
+       -->
+      <table class="restaurant-listings">
+        <tr class="restaurant-listing">
+          <td rowspan="2">
+            <picture>
+              <source sizes="100vw"
+              srcset="img/eden-restaurant120.jpg 120w,
+                      img/eden-restaurant240.jpg 240w,
+                      img/eden-restaurant480.jpg 480w,
+                      img/eden-restaurant960.jpg 960w">
+              <img src="img/eden-restaurant120.jpg" alt="restaurant image">
+            </picture>
+          </td>
+          <td>
+            <a href="./individual_sample.html"><strong>Edens Cafe</strong></a><br>
+            <picture>
+            <source sizes="100vw" srcset="img/stars4-162.png 162w,
+                          img/stars4-324.png 324w">
+            <img src="img/stars4-162.png" alt="4 star rating">
+            </picture>
+            <br>
+            <span class="grey">18 reviews</span>
+            <br>
+            $$  Mediterranean, Italian, Greek<br>
+          </td>
+          <td>
+            1548 Main Street W
+            Hamilton, ON L8S 1E1
+            Canada<br>
+            (289) 389-6493
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <div class="review">
+              <img src="img/reviewer-avatar30.png" alt="user avatar" class="reviewer-avatar" srcset="img/reviewer-avatar30.png 30w, img/reviewer-avatar58.png 58w,img/reviewer-avatar117.png 117w" sizes="100vw">
+              Everything here is good. From the wheatgrass shot to the salads, burgers, to the gyros and desserts. Highly recommended if You're in the area.
+              <a href="./individual_sample.html"><strong>Read more</strong></a><br>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="restaurant-listing">
+          <td rowspan="2">
+            <picture>
+              <source sizes="100vw"
+              srcset="img/eden-restaurant120.jpg 120w,
+                      img/eden-restaurant240.jpg 240w,
+                      img/eden-restaurant480.jpg 480w,
+                      img/eden-restaurant960.jpg 960w">
+              <img src="img/eden-restaurant120.jpg" alt="restaurant image">
+            </picture>
+          </td>
+          <td>
+            <a href="./individual_sample.html"><strong>Edens Cafe</strong></a><br>
+            <picture>
+            <source sizes="100vw" srcset="img/stars4-162.png 162w,
+                          img/stars4-324.png 324w">
+            <img src="img/stars4-162.png" alt="4 star rating">
+            </picture>
+            <br>
+            <span class="grey">18 reviews</span>
+            <br>
+            $$  Mediterranean, Italian, Greek<br>
+          </td>
+          <td>
+            1548 Main Street W
+            Hamilton, ON L8S 1E1
+            Canada<br>
+            (289) 389-6493
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <div class="review">
+              <img src="img/reviewer-avatar30.png" alt="user avatar" class="reviewer-avatar" srcset="img/reviewer-avatar30.png 30w, img/reviewer-avatar58.png 58w,img/reviewer-avatar117.png 117w" sizes="100vw">
+            Everything here is good. From the wheatgrass shot to the salads, burgers, to the gyros and desserts. Highly recommended if You're in the area.
+            <a href="./individual_sample.html"><strong>Read more</strong></a><br>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="restaurant-listing">
+          <td rowspan="2">
+            <picture>
+              <source sizes="100vw"
+              srcset="img/eden-restaurant120.jpg 120w,
+                      img/eden-restaurant240.jpg 240w,
+                      img/eden-restaurant480.jpg 480w,
+                      img/eden-restaurant960.jpg 960w">
+              <img src="img/eden-restaurant120.jpg" alt="restaurant image">
+            </picture>
+          </td>
+          <td>
+            <a href="./individual_sample.html"><strong>Edens Cafe</strong></a><br>
+            <picture>
+            <source sizes="100vw" srcset="img/stars4-162.png 162w,
+                          img/stars4-324.png 324w">
+            <img src="img/stars4-162.png" alt="4 star rating">
+            </picture>
+            <br>18 reviews<br>
+            $$  Mediterranean, Italian, Greek<br>
+          </td>
+          <td>
+            1548 Main Street W
+            Hamilton, ON L8S 1E1
+            Canada<br>
+            (289) 389-6493
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <div class="review">
+              <img src="img/reviewer-avatar30.png" alt="user avatar" class="reviewer-avatar" srcset="img/reviewer-avatar30.png 30w, img/reviewer-avatar58.png 58w,img/reviewer-avatar117.png 117w" sizes="100vw">
+            Everything here is good. From the wheatgrass shot to the salads, burgers, to the gyros and desserts. Highly recommended if You're in the area.
+            <a href="./individual_sample.html"><strong>Read more</strong></a><br>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="restaurant-listing">
+          <td rowspan="2">
+            <picture>
+              <source sizes="100vw"
+              srcset="img/eden-restaurant120.jpg 120w,
+                      img/eden-restaurant240.jpg 240w,
+                      img/eden-restaurant480.jpg 480w,
+                      img/eden-restaurant960.jpg 960w">
+              <img src="img/eden-restaurant120.jpg" alt="restaurant image">
+            </picture>
+          </td>
+          <td>
+            <a href="./individual_sample.html"><strong>Edens Cafe</strong></a><br>
+            <picture>
+            <source sizes="100vw" srcset="img/stars4-162.png 162w,
+                          img/stars4-324.png 324w">
+            <img src="img/stars4-162.png" alt="4 star rating">
+            </picture>
+            <br>18 reviews<br>
+            $$  Mediterranean, Italian, Greek<br>
+          </td>
+          <td>
+            1548 Main Street W
+            Hamilton, ON L8S 1E1
+            Canada<br>
+            (289) 389-6493
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <div class="review">
+              <img src="img/reviewer-avatar30.png" alt="user avatar" class="reviewer-avatar" srcset="img/reviewer-avatar30.png 30w, img/reviewer-avatar58.png 58w,img/reviewer-avatar117.png 117w" sizes="100vw">
+            Everything here is good. From the wheatgrass shot to the salads, burgers, to the gyros and desserts. Highly recommended if You're in the area.
+            <a href="./individual_sample.html"><strong>Read more</strong></a><br>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="restaurant-listing">
+          <td rowspan="2">
+            <picture>
+              <source sizes="100vw"
+              srcset="img/eden-restaurant120.jpg 120w,
+                      img/eden-restaurant240.jpg 240w,
+                      img/eden-restaurant480.jpg 480w,
+                      img/eden-restaurant960.jpg 960w">
+              <img src="img/eden-restaurant120.jpg" alt="restaurant image">
+            </picture>
+          </td>
+          <td>
+            <a href="./individual_sample.html"><strong>Edens Cafe</strong></a><br>
+            <picture>
+            <source sizes="100vw" srcset="img/stars4-162.png 162w,
+                          img/stars4-324.png 324w">
+            <img src="img/stars4-162.png" alt="4 star rating">
+            </picture>
+            <br>18 reviews<br>
+            $$  Mediterranean, Italian, Greek<br>
+          </td>
+          <td>
+            1548 Main Street W
+            Hamilton, ON L8S 1E1
+            Canada<br>
+            (289) 389-6493
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <div class="review">
+              <img src="img/reviewer-avatar30.png" alt="user avatar" class="reviewer-avatar" srcset="img/reviewer-avatar30.png 30w, img/reviewer-avatar58.png 58w,img/reviewer-avatar117.png 117w" sizes="100vw">
+            Everything here is good. From the wheatgrass shot to the salads, burgers, to the gyros and desserts. Highly recommended if You're in the area.
+            <a href="./individual_sample.html"><strong>Read more</strong></a><br>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="restaurant-listing">
+          <td rowspan="2">
+            <picture>
+              <source sizes="100vw"
+              srcset="img/eden-restaurant120.jpg 120w,
+                      img/eden-restaurant240.jpg 240w,
+                      img/eden-restaurant480.jpg 480w,
+                      img/eden-restaurant960.jpg 960w">
+              <img src="img/eden-restaurant120.jpg" alt="restaurant image">
+            </picture>
+          </td>
+          <td>
+            <a href="./individual_sample.html"><strong>Edens Cafe</strong></a><br>
+            <picture>
+            <source sizes="100vw" srcset="img/stars4-162.png 162w,
+                          img/stars4-324.png 324w">
+            <img src="img/stars4-162.png" alt="4 star rating">
+            </picture>
+            <br>18 reviews<br>
+            $$  Mediterranean, Italian, Greek<br>
+          </td>
+          <td>
+            1548 Main Street W
+            Hamilton, ON L8S 1E1
+            Canada<br>
+            (289) 389-6493
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <div class="review">
+              <img src="img/reviewer-avatar30.png" alt="user avatar" class="reviewer-avatar" srcset="img/reviewer-avatar30.png 30w, img/reviewer-avatar58.png 58w,img/reviewer-avatar117.png 117w" sizes="100vw">
+            Everything here is good. From the wheatgrass shot to the salads, burgers, to the gyros and desserts. Highly recommended if You're in the area.
+            <a href="./individual_sample.html"><strong>Read more</strong></a><br>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="restaurant-listing">
+          <td rowspan="2">
+            <picture>
+              <source sizes="100vw"
+              srcset="img/eden-restaurant120.jpg 120w,
+                      img/eden-restaurant240.jpg 240w,
+                      img/eden-restaurant480.jpg 480w,
+                      img/eden-restaurant960.jpg 960w">
+              <img src="img/eden-restaurant120.jpg" alt="restaurant image">
+            </picture>
+          </td>
+          <td>
+            <a href="./individual_sample.html"><strong>Edens Cafe</strong></a><br>
+            <picture>
+            <source sizes="100vw" srcset="img/stars4-162.png 162w,
+                          img/stars4-324.png 324w">
+            <img src="img/stars4-162.png" alt="4 star rating">
+            </picture>
+            <br>18 reviews<br>
+            $$  Mediterranean, Italian, Greek<br>
+          </td>
+          <td>
+            1548 Main Street W
+            Hamilton, ON L8S 1E1
+            Canada<br>
+            (289) 389-6493
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <div class="review">
+              <img src="img/reviewer-avatar30.png" alt="user avatar" class="reviewer-avatar" srcset="img/reviewer-avatar30.png 30w, img/reviewer-avatar58.png 58w,img/reviewer-avatar117.png 117w" sizes="100vw">
+            Everything here is good. From the wheatgrass shot to the salads, burgers, to the gyros and desserts. Highly recommended if You're in the area.
+            <a href="./individual_sample.html"><strong>Read more</strong></a><br>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <button class="btn btn-2">View More Results</button>
+
+    </div>
+  </div>
+
+  <footer>
+  Copyright CS 4WW3 Project. McMaster University
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Required for media query to work on mobile. Set width of viewport to the device width with scale 1x -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delicious</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Delicious</h1>
+    <h2 id="subtitle">Find your next favourite food spot!</h2>
+  </header>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="#">Log In</a></li>
+      <li><a href="registration.html">Sign up</a></li>
+      <li><a href="search.html">Search</a></li>
+      <li><a href="submission.html">Submission</a></li>
+    </ul>
+  </nav>
+
+  <!--
+  A restaurant page is a two column layout. It becomes one column if on mobile.
+  Column left:
+    1. Restaurant header
+      + Restaurant name
+      + average rating
+      + photos
+      + address
+      + Get Directions - redirect to google maps prepopulated with address for direction routing.
+      + phone number
+    2. user reviews
+    3. "View more reviews" button
+  Column right:
+    1. Map
+    2. hours today
+    3. price range
+    4. all business hours
+  -->
+  <div class="content">
+    <h2>Edens Cafe</h2>
+
+    <div class="col-left">
+      <div class="content" id="restaurant-header">
+        <div class="col-left">
+          <!-- The image takes up about 15% of the viewport and given different src images and width, the browser automatically calculates which one to load given the dpi of the device.-->
+          <picture>
+            <source sizes="100vw"
+            srcset="img/eden-restaurant120.jpg 120w,
+                    img/eden-restaurant240.jpg 240w,
+                    img/eden-restaurant480.jpg 480w,
+                    img/eden-restaurant960.jpg 960w">
+            <img src="img/eden-restaurant120.jpg" alt="restaurant image">
+          </picture>
+        </div>
+        <div class="col-left">
+          <picture>
+            <source sizes="100vw" srcset="img/stars4-162.png 162w,
+                            img/stars4-324.png 324w">
+            <img src="img/stars4-324.png" alt="4 star rating">
+          </picture>
+          <br>18 reviews<br>
+          $$  Mediterranean, Italian, Greek<br>
+          <button class="btn btn-1">View Photos</button>
+        </div>
+      </div>
+
+      <p>
+      <span class="fas fa-map-marker-alt"></span> 1548 Main Street W Hamilton, ON L8S 1E1, Canada<br>
+      <span class="fa fa-chevron-circle-right"></span> <a href="https://maps.google.com?saddr=Current+Location&daddr=1548+Main+St+W,+Hamilton,+ON+L8S+1E1">Get Directions</a><br>
+      <span class="fas fa-phone"></span> (289) 389-6493
+      </p>
+
+      <!-- Preload the metadata. Set the time to start as the first second of the video, this means that our video element will have the thumbnail be the 1st second -->
+      <video controls preload="metadata">
+        <source src="resource/restaurant.mp4#t=1" type="video/mp4">
+      </video>
+
+      <h3>Reviews for Edens Cafe</h3>
+
+      <!--
+      Each Review div is structured as follows:
+      User Avatar (float to the left)
+      Rating (on the right)
+      Review Description (on the right)
+       -->
+      <div class="review">
+        <img src="img/reviewer-avatar30.png" alt="user avatar" class="reviewer-avatar" srcset="img/reviewer-avatar30.png 30w, img/reviewer-avatar58.png 58w,img/reviewer-avatar117.png 117w" sizes="100vw">
+        <picture>
+          <source sizes="100vw" srcset="img/stars4-162.png 162w,
+                          img/stars4-324.png 324w">
+          <img src="img/stars4-162.png" alt="4 star rating">
+        </picture>
+        <br>
+        Everything here is good. From the wheatgrass shot to the salads, burgers, to the gyros and desserts. Highly recommended if You're in the area.
+      </div>
+
+      <div class="review">
+        <img src="img/reviewer-avatar30.png" alt="user avatar" class="reviewer-avatar" srcset="img/reviewer-avatar30.png 30w, img/reviewer-avatar58.png 58w,img/reviewer-avatar117.png 117w" sizes="100vw">
+        <picture>
+          <source sizes="100vw" srcset="img/stars4-162.png 162w,
+                          img/stars4-324.png 324w">
+          <img src="img/stars4-162.png" alt="4 star rating">
+        </picture>
+        <br>
+        “I've had the cowboy burger and kale salad - both so yummy!!”
+      </div>
+
+      <div class="review">
+        <img src="img/reviewer-avatar30.png" alt="user avatar" class="reviewer-avatar" srcset="img/reviewer-avatar30.png 30w, img/reviewer-avatar58.png 58w,img/reviewer-avatar117.png 117w" sizes="100vw">
+        <picture>
+          <source sizes="100vw" srcset="img/stars2-162.png 162w,
+                          img/stars2-324.png 324w">
+          <img src="img/stars2-162.png" alt="2 star rating">
+        </picture>
+        <br>
+        I came here once for dinner, and once for brunch. The food was pretty good both times, but wasn't anything mind blowing. I'd give the food here 2 stars overall.
+      </div>
+
+      <div class="review">
+        <img src="img/reviewer-avatar30.png" alt="user avatar" class="reviewer-avatar" srcset="img/reviewer-avatar30.png 30w, img/reviewer-avatar58.png 58w,img/reviewer-avatar117.png 117w" sizes="100vw">
+        <picture>
+          <source sizes="100vw" srcset="img/stars5-162.png 162w,
+                          img/stars5-324.png 324w">
+          <img src="img/stars5-162.png" alt="5 star rating">
+        </picture>
+        <br>
+        Such a great find. It's located off the normal path and the food is phenomenal. Everything from the service to the price was great. They accommodate special requests with the menu, and there is something for everyone. Local sourced food, cooked fresh and made to order.
+      </div>
+
+      <button class="btn btn-2">View More Reviews</button>
+
+    </div>
+
+    <div class="col-right">
+      <picture>
+        <source sizes="100vw"
+        srcset="img/map-individual432.png 432w,
+                img/map-individual864.png 864w,
+                img/map-individual1446.png 1446w">
+        <img src="img/map-individual480.png" alt="map for restaurant">
+      </picture>
+
+      <p>
+      <span class="far fa-clock"></span> Today 8:00 am - 8:00 pm <span class="closed">Closed now</span><br>
+      <span class="price">$$</span> Price range CA $11-30
+      </p>
+
+      <h4>Hours</h4>
+      <table>
+        <tr>
+          <td>Mon</td>
+          <td>8:00am - 9:00pm</td>
+        </tr>
+        <tr>
+          <td>Tue</td>
+          <td>8:00am - 9:00pm</td>
+        </tr>
+        <tr>
+          <td>Wed</td>
+          <td>8:00am - 9:00pm</td>
+        </tr>
+        <tr>
+          <td>Thur</td>
+          <td>8:00am - 9:00pm</td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td>8:00am - 10:00pm</td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td>8:00am - 10:00pm</td>
+        </tr>
+        <tr>
+          <td>Sunday</td>
+          <td>8:00am - 8:00pm</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+  Copyright CS 4WW3 Project. McMaster University
+  </footer>
+
+</body>
+</html>

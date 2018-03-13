@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Required for media query to work on mobile. Set width of viewport to the device width with scale 1x -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delicious</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Delicious</h1>
+    <h2 id="subtitle">Find your next favourite food spot!</h2>
+  </header>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="#">Log In</a></li>
+      <li><a href="registration.html">Sign up</a></li>
+      <li><a href="search.html">Search</a></li>
+      <li><a href="submission.html">Submission</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <h2>Sign up for Delicious!</h2>
+    <p>By signing up, you agree to Delicious’s Terms of Service and Privacy Policy.</p>
+
+  <!--
+  User registration is a form element that on pressing submit does a HTTP post with our form input information.
+
+  5 different HTML form input elements are used:
+  1. type=text for name. Free form text.
+  2. type=email for email address. Validates if input is email.
+  3. type=password for password.
+  4. type=date for date of birth. Only allows date.
+  5. type=radio for gender. Select either male/female
+  -->
+  <form action="#" method="post">
+  <fieldset>
+    <legend>User Registration</legend>
+    <label for="name">Name:</label>
+    <input id="name" type="text" name="name">
+
+    <br>
+    <label for="emailAddress">Email:</label>
+    <input id="emailAddress" type="email">
+    <br>
+    <label for="userPassword">Password:</label>
+    <input id="userPassword" type="password">
+    <br>
+    <label for="dateOfBirth">Birthday:</label>
+    <input id="dateOfBirth" type="date">
+
+    <br>
+    <label for="male">Male</label>
+    <input type="radio" name="gender" id="male">
+    <label for="female">Female</label>
+    <input type="radio" name="gender" id="female">
+    <br>
+    <input type="submit" value="Submit" class="btn btn-1">
+  </fieldset>
+  </form>
+
+  Already a user? <a href="./login.html">Log In</a>
+  </div>
+
+  <footer>
+  Copyright CS 4WW3 Project. McMaster University
+  </footer>
+
+</body>
+</html>

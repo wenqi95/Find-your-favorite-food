@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Required for media query to work on mobile. Set width of viewport to the device width with scale 1x -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delicious</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Delicious</h1>
+    <h2 id="subtitle">Find your next favourite food spot!</h2>
+  </header>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="#">Log In</a></li>
+      <li><a href="registration.html">Sign up</a></li>
+      <li><a href="search.html">Search</a></li>
+      <li><a href="submission.html">Submission</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <h2>Submit a review</h2>
+    <p>
+      Your review helps others learn about great local businesses!
+      <br>
+      By submitting, you agree to Delicious’s Terms of Service and Privacy Policy.
+    </p>
+
+    <!--
+    Restaurant review is a form element that on pressing submit does a HTTP post with our form input information.
+
+    1. input type="text" for Restaurant Name
+    2. input type="number" for latitude & longitude
+    3. input type="radio" for rating 1,2,3,4,5
+    4. textarea form="restaurantReview" for description paragraph
+    5. input type="file" for uploading an image/video for the restaurant.
+
+    action="" means post to the this page aka same url, just instead
+    of doing a get, a form does a post at the url.
+    https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data
+
+    <form action="#">
+    This was used before HTML5 to do the same thing. But no longer needed.
+    I keep it as <form action="#"> since the validator doesn't let it pass with empty string.
+    -->
+    <form action="#" method="post" id="restaurantReview">
+    <fieldset>
+      <legend>Restaurant Review</legend>
+      <label for="name">Restaurant Name:</label>
+      <input id="name" type="text" name="name">
+      <br>
+      <label for="latitude">Latitude:</label>
+      <input id="latitude" type="number" name="latitude">
+      <label for="longitude">Longitude:</label>
+      <input id="longitude" type="number" name="longitude">
+      <br>
+
+      Rating:
+      <div id="rating">
+        Bad
+        <label for="rating1">1<br>
+        <input type="radio" id="rating1" name="rating" value="1">
+        </label>
+
+        <label for="rating2">2<br>
+        <input type="radio" id="rating2" name="rating" value="2">
+        </label>
+
+        <label for="rating3">3<br>
+        <input type="radio" id="rating3" name="rating" value="3">
+        </label>
+
+        <label for="rating4">4<br>
+        <input type="radio" id="rating4" name="rating" value="4">
+        </label>
+
+        <label for="rating5">5<br>
+        <input type="radio" id="rating5" name="rating" value="5">
+        </label>
+        Amazing
+      </div>
+
+      <label for="restaurantDescription">Description</label>
+      <!-- form="restaurantReview". Associate the textarea with the form so the info gets sent on form submit. -->
+      <textarea form="restaurantReview" name="description" id="restaurantDescription" placeholder="Let us know your experience!"></textarea>
+      <br>
+
+      <label for="imagePicker">Select a image</label> <input type="file" name="img" id="imagePicker">
+      <br>
+      <label for="videoPicker">Select a video</label> <input type="file" name="video" id="videoPicker">
+
+      <br>
+      <input type="submit" value="Post Review" class="btn btn-1">
+    </fieldset>
+    </form>
+  </div>
+
+  <footer>
+  Copyright CS 4WW3 Project. McMaster University
+  </footer>
+
+</body>
+</html>

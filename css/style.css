@@ -1,0 +1,358 @@
+html {
+  /*
+  Fill the viewport given. This ensures our footer starts at
+  the bottom of the screen even if there isn't enough content to push it down.
+  */
+  height: 100%;
+  /*
+  Easier to reason about padding & margin since they are since
+  bounded by the width & height.
+   */
+  box-sizing: border-box;
+}
+
+body {
+  color: #313232;
+  font-family: 'Arvo';
+  margin: 0; /* Remove the margin whitespace inherited from the browser style*/
+
+  /* Default positon is static aka top,right,bottom,left have no effect.
+  Using relative top, bottom affect how content is laid out in body.
+  We are mainly using this to always set our footer at the bottom even if there
+  isn't enough content to push it down.
+  */
+  position: relative;
+  padding-bottom: 6rem;
+  min-height: 100%; /* Have the body fill 100% of html's viewport*/
+}
+
+/* Style for the header ------------------ */
+
+header {
+  color: white;
+  text-align: center;
+  background-image: url("../img/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1rem;
+}
+
+header h1 {
+  font-family: 'Dancing Script Bold', cursive;
+  color: #E6414A;
+  /* Font sized is specified in rem, root em.
+  4 * base font size (say base size is 16px, then 4*16 = 64px)*/
+  font-size: 4rem;
+  /* Add a dark red text shadow to our logo h1 text offset 4px right and 5px down*/
+  text-shadow: #5B1E22 4px 5px;
+}
+
+header h1, header h2, header h3, header h4 {
+  padding-top: 0.1rem;
+  padding-bottom: 0rem;
+  margin: 0;
+}
+/* ---------------------------------------- */
+
+/* Style for the nav bar ----------------*/
+nav {
+  background: #191919;
+  line-height: 2;
+  top: 0;
+  z-index: 79;
+  position: sticky;
+}
+
+nav ul li{
+  /* Display the links on the same display block instead of normally in a list it's display block for each li element*/
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+nav ul {
+  margin: 0;
+}
+
+nav a {
+  color: #76BEC4;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: white;
+  text-decoration: underline;
+}
+/* ---------------------------------------- */
+
+/* Style for content div ------------------ */
+div.content {
+  /*
+  Expand this parent container size to contain floating elements/containers.
+  This is needed otherwise the footer or other elements won't be aligned properly.
+  Because floated items normally go outside the container and the container size doesn't expand.
+  */
+  overflow: auto;
+  /* Center the content */
+  margin: 0 auto;
+  /* Using width with percent allows it to be responsive relative to size of viewport.
+  Using max-width limits the maximum size so on larger displays the content div isn't too wide. */
+  width: 80%;
+  max-width: 900px;
+}
+
+.col-left {
+  float: left;
+  /* More flexible than width. In case you can't fill 35% of your container. It will fill up to max of 60%*/
+  max-width: 60%;
+}
+
+.col-right {
+  float: right;
+  padding-left: 5%;
+  /* More flexible than width. In case you can't fill 35% of your container. It will fill up to max of 35%*/
+  max-width: 35%;
+}
+
+#restaurant-header {
+  width: 100%;
+}
+
+#restaurant-header img {
+  max-width: 200px;
+  width: 100%;
+}
+
+#restaurant-header .col-left {
+  padding-right: 2%;
+}
+
+/*
+Make images responsive. It will scale up to the max of the image's width.
+If instead you used width: 100%; it will try to stretch the image more than its default image size
+to fill the width of the container.
+*/
+img {
+  max-width: 100%;
+}
+
+span.closed {
+  color: #920C2C;
+  font-size: 0.8rem;
+}
+
+span.price {
+  color: #18980D; /*dark green*/
+  font-weight: 900;
+}
+
+span.grey {
+  color: #72776C;
+}
+
+video {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Button styles */
+.btn {
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  position: relative; /* Set so that top can affect the button. Needed for hover effect.*/
+  display: inline-block; /* Buttons should be on the same display block. */
+  border-radius: 5px; /* Round the corners of the button */
+  letter-spacing: 1px; /* Add spacing to each letter */
+  text-transform: uppercase; /* Make the text uppercase */
+  /* Remove the outline & border that buttons/links have */
+  outline: none;
+  border: none;
+}
+
+/* Button 1 blue */
+.btn-1 {
+  background: #276DDE;
+  color: #fff;
+  transition: none;
+}
+
+.btn-1:hover {
+  box-shadow: 0 8px #194489;
+  top: -2px;
+}
+
+.btn-1:active {
+  box-shadow: 0 0 #194489;
+  top: 6px;
+}
+
+/* Button 2 red */
+.btn-2 {
+  background: #cb4e4e;
+  color: #fff;
+  transition: none;
+}
+
+.btn-2:hover {
+  box-shadow: 0 8px #ab3c3c;
+  top: -2px;
+}
+
+.btn-2:active {
+  box-shadow: 0 0 #ab3c3c;
+  top: 6px;
+}
+
+/* ---------------------------------------- */
+
+/* Search result & review listings --------*/
+table {
+  font-size: 0.7rem;
+}
+
+table img {
+  max-width: 100px;
+  padding-right: 5px;
+}
+
+table td {
+  vertical-align:top;
+}
+
+/* Add line under each table row */
+.restaurant-listings th, .restaurant-listings td {
+  border-bottom: 1px solid #ddd;
+}
+
+/* float the user avatar left */
+.reviewer-avatar {
+  float: left;
+  padding-left: 2%;
+  padding-right: 2%;
+  width: 2rem;
+}
+
+/* Styling for the review section */
+div.review {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  overflow: auto;
+}
+
+.review {
+  font-size: 0.7rem;
+}
+
+.review img {
+  max-width: 100px;
+}
+
+/* ---------------------------------------- */
+
+/* Style the form input ------------------- */
+form input, form button, form a{
+  font-family: 'Open Sans';
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+form input {
+  margin-bottom: 0.5rem;
+}
+
+/*
+ Rating labels are all on one line.
+
+  1 2 3
+  o o o
+
+ Instead of
+ 1 o
+ 2 o
+ 3 o
+ */
+form #rating label {
+  display: inline-block;
+  padding: 2%;
+  text-align: center;
+}
+
+/* textarea should fill the width and be min 60px tall */
+textarea {
+  width: 100%;
+  min-height: 60px;
+}
+
+/* ---------------------------------------- */
+
+/* Style for footer */
+footer {
+  background: #191919;
+  color: white;
+  font-size: 0.7rem;
+  padding: 1rem;
+
+  /* Set footer at the bottom. */
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Tells the browser to position footer relative to its first non-static ancestor element (body) */
+  position: absolute;
+}
+
+/* Media queries for responsive design on mobile and smaller viewports*/
+@media screen and (max-width: 400px) {
+  /* On mobile remove the subtitle to save space. */
+  header #subtitle {
+    display: none;
+  }
+
+  nav {
+    /* Disable sticky scrolling menu on devices with smaller screens. */
+    position: relative;
+  }
+
+  nav ul li{
+    /* Display the navbar links on their own display block aka on their own line. */
+    display: block;
+  }
+
+  div.content {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  /* Make floating containers not float since smaller screens have less room. */
+  .content .col-left, .content .col-right{
+    float: none;
+    max-width: 100%; /* Expand to fill its display block */
+    padding-bottom: 1rem;
+  }
+}
+
+/*
+Specify online fonts to display text on their web pages.
+*/
+@font-face {
+  font-family: 'Arvo';
+  src: local('Arvo'), url(https://fonts.gstatic.com/s/arvo/v9/rC7kKhY-eUDY-ucISTIf5PesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Dancing Script Bold'), local('DancingScript-Bold'), url(https://fonts.gstatic.com/s/dancingscript/v9/If2SXTr6YS-zF4S-kcSWSVi_szpbr_QkqiM8rebBwWg.woff2) format('woff2');
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url('../fonts/open-sans-v15-latin-regular.woff') format('woff');
+}
