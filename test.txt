@@ -2,5 +2,6 @@ test file
 
 new-branch (test change)
 
+master branch change 
 
-new-branch-change
+
